@@ -67,6 +67,7 @@ bootRun {
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
 
+// tag::testLogging[]
 tasks.withType(Test) {
     systemProperty "geb.env", System.getProperty('geb.env')
     systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
@@ -77,6 +78,7 @@ tasks.withType(Test) {
         exceptionFormat 'full'
     }
 }
+// end::testLogging[]
 
 assets {
     minifyJs = true
