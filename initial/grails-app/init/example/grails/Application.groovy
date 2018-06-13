@@ -1,4 +1,4 @@
-package grails.on.travis.basics
+package example.grails
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
