@@ -1,0 +1,14 @@
+In order for Travis to execute the Grails build, the access permissions, or modes, must be changed for some files.  We will change this using
+`chmod` within Git.
+
+Grant permissions for `gradlew` and `travis-build.sh`.
+
+[source, bash]
+----
+> git ls-tree HEAD
+> git update-index --chmod=+x gradlew travis-build.sh
+> git commit -m "first commit"
+> git commit -m "permission access"
+> git ls-tree HEAD
+> git push
+----
