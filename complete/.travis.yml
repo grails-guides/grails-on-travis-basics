@@ -6,8 +6,8 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 language: groovy
-install:
+install: # // <1>
   - true
 jdk:
   - oraclejdk8
-script: "./travis-build.sh"
+script: "./travis-build.sh" # // <2>

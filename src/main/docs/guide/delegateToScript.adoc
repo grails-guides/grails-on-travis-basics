@@ -1,0 +1,17 @@
+.*.travis.yml*
+[source, yml]
+----
+include::{sourceDir}/.travis.yml[]
+----
+
+<1> sdf
+<2> sdf
+
+.*travis-build.sh*
+[source, bash]
+----
+include::{sourceDir}/travis-build.sh[]
+----
+
+<1> sdf
+<2> sdf
