@@ -1,1 +1,34 @@
+We will create a `HelloController` which renders a text. Write a test `HelloControllerSpec` which validates
+the method executes correctly.
 
+[source, groovy]
+.grails-app/controllers/example/grails/HelloController.groovy
+----
+include::{sourceDir}/grails-app/controllers/example/grails/HelloController.groovy[]
+----
+
+[source, groovy]
+.src/test/groovy/example/grails/HelloControllerSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/grails/HelloControllerSpec.groovy[]
+----
+
+### Test Logging
+
+Adjust Gradle to output the test results to the console, so that we will be able to see it in the Travis Job log.
+
+[source, groovy]
+.build.gradle
+----
+tasks.withType(Test) {
+    ...
+    include::{sourceDir}/build.gradle[tag=testLogging]
+    ...
+}
+----
+
+### Run Tests
+
+Run the tests with gradle to see that everything executes correctly up to this point.
+
+`./gradlew check`.

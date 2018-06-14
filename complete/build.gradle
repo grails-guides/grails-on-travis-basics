@@ -67,18 +67,20 @@ bootRun {
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
 
-// tag::testLogging[]
+
 tasks.withType(Test) {
     systemProperty "geb.env", System.getProperty('geb.env')
     systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
     systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
     systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
+// tag::testLogging[]
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat 'full'
     }
-}
 // end::testLogging[]
+}
+
 
 assets {
     minifyJs = true
