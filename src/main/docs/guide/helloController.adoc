@@ -15,7 +15,7 @@ include::{sourceDir}/src/test/groovy/example/grails/HelloControllerSpec.groovy[]
 
 ### Test Logging
 
-Adjust Gradle to output the test results to the console, so that we will be able to see it in the Travis Job log.
+Adjust Gradle to output the test results to the console. This ensures test output will be printed to the Travis Job log.
 
 [source, groovy]
 .build.gradle

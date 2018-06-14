@@ -1,4 +1,4 @@
-We will need to place the Grails Application on GitHub so that Travis can access it.
+We will need to place the Grails application on GitHub so that Travis can access it.
 
 Proceed to GitHub and follow the directions to https://help.github.com/articles/creating-a-new-repository/[create a new repository].
 
@@ -14,7 +14,7 @@ Add the MIT license file.  Travis CI is free with an Open Source License. You ca
 include::{sourceDir}/LICENSE.txt[]
 ----
 
-Let's create `travis-build.sh`, for which we will use later in the guide.
+Let's create an empty `travis-build.sh`, for which we will use later in the guide.
 
 [source, bash]
 ----
