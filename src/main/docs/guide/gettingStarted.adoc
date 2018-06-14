@@ -1,1 +1,2 @@
-In this guide you are going to...
+In this guide you are going to create a Grails application on GitHub and use https://www.travis-ci.com/[Travis CI] to build
+and test your code.

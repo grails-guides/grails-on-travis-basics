@@ -6,6 +6,14 @@ gettingStarted:
   howto: How to complete the guide
 writingTheApp:
   title: Writing the Application
+  helloController: HelloController and HelloControllerSpec
+createGitHubRepo:
+  title: Create GitHub Repo
+  grantPermissions: Grant File Permissions for Execution
+integrateTravis:
+  title: Integrate Travis CI
+  createTravisConfig: Create Travis Config File
+  delegateToScript: Delegate to Script File
 runningTheApp:
   title: Running the Application
 helpWithGrails:
