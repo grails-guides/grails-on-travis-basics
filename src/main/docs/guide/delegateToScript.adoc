@@ -20,3 +20,5 @@ include::{sourceDir}/travis-build.sh[]
 
 <1> Execute `gradlew assemble` command.
 <2> Execute `gradlew check` command.
+
+Commit the change to Git push them to the remote repository.  Upon the push, go to https://travis-ci.com/ and view the build running.

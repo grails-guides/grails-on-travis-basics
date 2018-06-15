@@ -12,3 +12,6 @@ include::{sourceDir}/.travis.yml.default[]
 <2> This line up to `before_cache` is caching configuration so that Travis can reuse retrieved dependencies.
 <3> Select `groovy` as the language.
 <4> Select the `Java' jdk8.
+
+Commit the change to Git push them to the remote repository.  Upon the push, go to https://travis-ci.com/ and view the build running.
+Once the build is complete, restart the build to demonstrate that Travis will use the cache for dependencies.
