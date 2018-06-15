@@ -1,11 +1,16 @@
+In order to be more expressive with the build, we can delegate to a script file.  In this scenario, Travis will execute a specified file
+and skip the defaults.  Below is a `.travis.yml` which delegates to a .`sh` file.
+
 .*.travis.yml*
 [source, yml]
 ----
 include::{sourceDir}/.travis.yml[]
 ----
 
-<1> sdf
-<2> sdf
+<1> Indicates to Travis to skip `install` and `test` phases.
+<2> Delegate to a script.
+
+The script below conducts the needed `gradlew` commands.
 
 .*travis-build.sh*
 [source, bash]
@@ -13,5 +18,5 @@ include::{sourceDir}/.travis.yml[]
 include::{sourceDir}/travis-build.sh[]
 ----
 
-<1> sdf
-<2> sdf
+<1> Execute `gradlew assemble` command.
+<2> Execute `gradlew check` command.

@@ -1,1 +1,9 @@
-- refer to the docs to install travis and activate for repo
+Travis CI integrates directly with your GitHub account. Follow the directions on the Travis website for
+https://docs.travis-ci.com/user/getting-started/[Getting Started.]
+
+In short you will need to:
+
+. Use your GitHub account to sign into Travis.
+. Give permission to Travis to access your repositories.
+. Enable the repository with Travis CI.
+. Create a `.travis.yml`

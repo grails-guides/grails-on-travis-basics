@@ -1,10 +1,14 @@
+The `.travis.yml` file tells Travis what to do. It must be located at the top level of your project.  For a Grails project,
+note that we have set the `language: groovy`.  Travis comes with reasonable defaults. If the project has `build.gradle` in the
+repository root, Travis runs `gradlew assemble` in the `install` phase, and `gradlew check` in the `test` phase.
+
 .*.travis.yml*
 [source, yml]
 ----
 include::{sourceDir}/.travis.yml.default[]
 ----
 
-<1> dfg
-<2> dfg
-<3> dfg
-<4> dfg
+<1> Gives the default Ubuntu infrastructure.
+<2> This line up to `before_cache` is caching configuration so that Travis can reuse retrieved dependencies.
+<3> Select `groovy` as the language.
+<4> Select the `Java' jdk8.

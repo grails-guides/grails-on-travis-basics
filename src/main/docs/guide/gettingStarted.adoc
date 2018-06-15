@@ -1,4 +1,4 @@
 In this guide you are going to create a Grails application on GitHub and use https://www.travis-ci.com/[Travis CI] to build
-and test your code.  This guide assumes you are familiar with Git and GitHub, and that you already have a https://github.com/features#documentation[GitHub] account setup.
-The guide will cover only build and test in association with Travis.  However, Travis CI has the ability to deploy, send notifications, and
+and test your code.  This guide assumes you are familiar with Git and GitHub. It also assumes that you already have a https://github.com/features#documentation[GitHub] account.
+The guide will cover only build and test association with Travis.  However, Travis CI has the ability to deploy, send notifications, and
 highly customize CI jobs.  See https://docs.travis-ci.com/user/customizing-the-build[here] for more information.
