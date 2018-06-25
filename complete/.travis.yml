@@ -1,7 +1,7 @@
-dist: trusty <1>
-sudo: true <1>
+dist: trusty # // <1>
+sudo: true # // <1>
 addons:
-  chrome: stable  <1>
+  chrome: stable # // <1>
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:

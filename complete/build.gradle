@@ -72,7 +72,7 @@ dependencies {
 
 //tag::webdriverBinaries[]
 webdriverBinaries {
-    chromedriver '2.38'  // <6>
+    chromedriver '2.40'  // <6>
     geckodriver '0.21.0' // <7>
 }
 //end::webdriverBinaries[]
