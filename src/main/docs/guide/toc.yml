@@ -17,7 +17,5 @@ integrateTravis:
   title: Integrate Travis CI
   createTravisConfig: Create Travis Config File
   delegateToScript: Delegate to Script File
-runningTheApp:
-  title: Running the Application
 helpWithGrails:
   title: Help with Grails

@@ -1,6 +1,0 @@
-include::{commondir}/common-runapp.adoc[]
-
-To run the tests use `./gradlew check`.
-
-To activate the Travis build, commit a change to your Git repo, then push to GitHub. Go to ttps://www.travis-ci.com/[Travis CI]
-to see the build triggered.
