@@ -7,6 +7,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.14.8"
+        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:1.4"
     }
 }
 
@@ -19,6 +20,7 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
+apply plugin:"com.energizedwork.webdriver-binaries"
 
 repositories {
     mavenLocal()
@@ -54,10 +56,17 @@ dependencies {
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.8"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
-    testCompile "org.grails.plugins:geb:1.1.2"
-    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
-    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    testCompile "org.grails.plugins:geb"
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.6.0"
+    testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.6.0"
+    testCompile "org.seleniumhq.selenium:selenium-api:3.6.0"
+    testCompile "org.seleniumhq.selenium:selenium-support:3.6.0"
+}
+
+webdriverBinaries {
+    chromedriver '2.40'
+    geckodriver '0.21.0'
 }
 
 bootRun {
@@ -70,8 +79,6 @@ bootRun {
 tasks.withType(Test) {
     systemProperty "geb.env", System.getProperty('geb.env')
     systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
-    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
-    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
 }
 
 assets {

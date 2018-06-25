@@ -7,6 +7,9 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.14.8"
+        //tag::buildscriptwebdriverbinaries[]
+        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:1.4" // <1>
+        //end::buildscriptwebdriverbinaries[]
     }
 }
 
@@ -19,6 +22,9 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
+//tag::applywebdriverbinaries[]
+apply plugin:"com.energizedwork.webdriver-binaries" // <1>
+//end::applywebdriverbinaries[]
 
 repositories {
     mavenLocal()
@@ -54,11 +60,22 @@ dependencies {
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.8"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
-    testCompile "org.grails.plugins:geb:1.1.2"
-    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
-    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    //tag::gebdependencies[]
+    testCompile "org.grails.plugins:geb" // <2>
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.6.0"  // <3>
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.6.0" // <4>
+    testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.6.0"  // <5>
+    testCompile "org.seleniumhq.selenium:selenium-api:3.6.0"            // <5>
+    testCompile "org.seleniumhq.selenium:selenium-support:3.6.0"        // <5>
+    //end::gebdependencies[]
 }
+
+//tag::webdriverBinaries[]
+webdriverBinaries {
+    chromedriver '2.40'  // <6>
+    geckodriver '0.21.0' // <7>
+}
+//end::webdriverBinaries[]
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
@@ -71,8 +88,6 @@ bootRun {
 tasks.withType(Test) {
     systemProperty "geb.env", System.getProperty('geb.env')
     systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
-    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
-    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
 // tag::testLogging[]
     testLogging {
         events "passed", "skipped", "failed"
