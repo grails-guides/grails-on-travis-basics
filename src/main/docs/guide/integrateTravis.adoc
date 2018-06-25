@@ -7,3 +7,8 @@ In short you will need to:
 . Give permission to Travis to access your repositories.
 . Enable the repository with Travis CI.
 . Create a `.travis.yml`
+
+The next image shows how to enable the repository with Travis CI:
+
+image::travis.png[]
+
