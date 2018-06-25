@@ -1,11 +1,48 @@
-Every software project needs https://docs.travis-ci.com/user/for-beginners#What-is-Continuous-Integration-(CI)[Continuous Integration (CI)].
+The `initial` project contains a Grails Application created with the `web` profile and the `geb2` feature
+with the http://start.grails.org[Grails Application Forge].
 
-[quote, Travis CI Docs]
-Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change
-at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments.
+image::appforge.png[]
 
-Travis CI is a continuous integration platform seamlessly integrated with GitHub.  It supports your development process by automatically
-building, testing and deploying code changes.  Let's start by writing a simple Grails application.
+The `geb2` features includes a dependency to the latest version of http://gebish.org[Geb] which is not compatible with JDK 1.7. If you need to support 1.7 use the *geb* feature
+instead.
+
+Using the `geb2` feature modifies your build.gradle as follows:
+
+[source, groovy]
+.build.gradle
+----
+buildscript {
+...
+    dependencies {
+    ...
+include::{sourceDir}/build.gradle[tag=buildscriptwebdriverbinaries]
+    }
+}
+...
+...
+...
+include::{sourceDir}/build.gradle[tag=applywebdriverbinaries]
+
+...
+...
+...
+
+dependencies {
+    ...
+    ...
+include::{sourceDir}/build.gradle[tag=gebdependencies]
+}
+
+include::{sourceDir}/build.gradle[tag=webdriverBinaries]
+----
+
+<1> Apply the https://github.com/energizedwork/webdriver-binaries-gradle-plugin[Webdriver binaries Gradle Plugin]. A Gradle plugin that downloads WebDriver binaries specific to the operating system the build runs on. The plugin also as configures various parts of the build to use the downloaded binaries.
+<2> Include a `testCompile` dependency to the Geb Grails plugin which has a transitive dependency to `geb-spock`.
+<3> Adds the necessary selenium dependencies to use Chrome
+<4> Adds the necessary selenium dependencies to use Firefox
+<5> Geb is built on top of WebDriver. You need these `testCompile` dependencies.
+<6> Configures the http://chromedriver.chromium.org[ChromeDriver] version to be used by the Webdriver binaries Gradle Plugin.
+<7> Configures the https://github.com/mozilla/geckodriver/releases[GeckoDriver] version (e.g. Firefox) to be used by the Webdriver binaries Gradle Plugin.
 
 
 

@@ -6,7 +6,10 @@ gettingStarted:
   howto: How to complete the guide
 writingTheApp:
   title: Writing the Application
-  helloController: HelloController and HelloControllerSpec
+  unitTest: Unit Test
+  integrationTest: Integration Test
+  testLogging: Verbose Test Output
+  runTests: Run Tests
 createGitHubRepo:
   title: Create GitHub Repo
   grantPermissions: Grant File Permissions for Execution
