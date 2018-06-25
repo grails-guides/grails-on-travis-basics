@@ -5,10 +5,8 @@ Grant permissions for `gradlew` and `travis-build.sh`:
 
 [source, bash]
 ----
-> git ls-tree HEAD
-> git update-index --chmod=+x gradlew travis-build.sh
-> git commit -m "first commit"
-> git commit -m "permission access"
-> git ls-tree HEAD
+> chmod=+x gradlew
+> chmod=+x gradlewtravis-build.sh
+> git commit -m "chmod a+x gradew and travis-build.sh"
 > git push
 ----
