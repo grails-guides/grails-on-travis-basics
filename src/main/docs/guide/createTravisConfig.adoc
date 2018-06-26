@@ -11,7 +11,7 @@ include::{sourceDir}/.travis.yml.default[]
 <1> Gives the default Ubuntu infrastructure.
 <2> This line up to `before_cache` is caching configuration tells Travis CI explicitly that you want to store and use the Gradle cache and Wrapper for successive invocations of the build. Read https://guides.gradle.org/executing-gradle-builds-on-travisci/[Executing Gradle builds on travis ci].
 <3> Select `groovy` as the language.
-<4> Select the `Java' jdk8.
+<4> Select the `Java` jdk8.
 
 Commit the change to Git push them to the remote repository.  Upon the push, go to https://travis-ci.com/ and view the build running.
 Once the build is complete, restart the build to demonstrate that Travis will use the cache for dependencies.
