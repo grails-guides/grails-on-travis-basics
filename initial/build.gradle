@@ -74,6 +74,7 @@ dependencies {
     testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.141.59"
     testCompile "org.seleniumhq.selenium:selenium-api:3.141.59"
     testCompile "org.seleniumhq.selenium:selenium-support:3.141.59"
+    testRuntime 'net.sourceforge.htmlunit:htmlunit:2.35.0'
 }
 
 webdriverBinaries {
