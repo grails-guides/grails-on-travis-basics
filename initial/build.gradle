@@ -79,7 +79,7 @@ dependencies {
 }
 
 webdriverBinaries {
-    chromedriver '2.45'
+    chromedriver '78.0.3904.105'
     geckodriver '0.23.0'
 }
 
