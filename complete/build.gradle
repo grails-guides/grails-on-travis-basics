@@ -85,7 +85,7 @@ dependencies {
 //tag::webdriverBinaries[]
 webdriverBinaries {
     chromedriver '78.0.3904.105'  // <6>
-    geckodriver '0.23.0' // <7>
+    geckodriver '0.26.0' // <7>
 }
 //end::webdriverBinaries[]
 
