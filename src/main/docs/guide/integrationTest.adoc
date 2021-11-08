@@ -6,5 +6,3 @@ displays the sentence `Welcome to Grails`.
 ----
 include::{sourceDir}/src/integration-test/groovy/example/grails/DefaultHomePageSpec.groovy[]
 ----
-
-<1> Ignore test unless system property `geb.env` is present.
