@@ -1,7 +1,11 @@
-# Grails Guide - Grails on Travis Basics
+# Grails on Travis Basics
 
-This example application demonstrates how to use Travis CI to build and test Grails applications 
+This repository contains the worked sample app for the [Grails on Travis Basics](https://grails.apache.org/guides/grails-on-travis-basics/4/guide/index.html) guide on the Apache Grails site.
 
-The completed example source code can be find in the `complete` directory.
+## Run the example
 
-The published guide can be found on the [Grails Guides website](http://guides.grails.org/grails-on-travis-basics/guide/index.html)
+`./gradlew bootRun`
+
+## Maintained at apache/grails-static-website
+
+The guide narrative is maintained at https://github.com/apache/grails-static-website. Changes to the guide content go there; this repo holds the worked sample app only.
