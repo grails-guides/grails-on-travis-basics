@@ -1,4 +1,0 @@
-Verify everything executes correctly up to this point.
-
-`./gradlew check`.
-include::{commondir}/common-testApp.adoc[]
